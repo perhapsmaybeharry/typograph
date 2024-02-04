@@ -1,0 +1,137 @@
+<!--
+
+	TYPOGRAPH
+	simple typesetting framework
+
+	Harry Wang
+	24-25 Aug 2023
+
+--->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- customizable -->
+		<title>Template Typograph Document</title>
+		<!-- <link rel="stylesheet" href="custom.css"> -->
+		<!-- <script src="custom.js"></script> -->
+
+		<!-- standard setup -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+		<!-- dependencies on typograph installation -->
+		<link rel="stylesheet" href="file:///Users/Harry/Desktop/%23%20work/%23%20typograph/typograph.css">
+		<script src="file:///Users/Harry/Desktop/%23%20work/%23%20typograph/typograph.js"></script>
+		<script id="MathJax-script" async src="file:///Users/Harry/Desktop/%23%20work/%23%20typograph/mathjax/es5/tex-mml-chtml.js"></script>
+	</head>
+	<body onload="renderDocument()">
+		<cover>
+			<doctitle>Assignment ∞</doctitle>
+			<author>Harry Wang</author>
+			<subtitle>CS 499</subtitle>
+			<date>1 Jan 1970</date>
+		</cover>
+		<toc></toc>
+
+		<chp>This is a chapter header...</chp>
+		<sec>...this is a section header...</sec>
+		<sse>...and this is a subsection header!</sse>
+		<sse>...and another subsection header!</sse>
+		<sse>...and yet another subsection header!</sse>
+
+		<chp>Just checking</chp>
+		<sec>...this is a section header...</sec>
+		<sse>...and this is a subsection header!</sse>
+		<sse>...and another subsection header!</sse>
+		<sec>...this is a section header...</sec>
+		<sse>...and this is a subsection header!</sse>
+		<sss>...and a subsubsection header!</sss>
+		<pbr></pbr>
+
+		<p>This is a paragraph. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium animi impedit voluptas eius voluptatibus veniam similique ex, eum libero illum debitis pariatur vel quasi, omnis non suscipit nostrum optio? Eum? Eum. Eum!</p>
+		<p>This is a paragraph. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium animi impedit voluptas eius voluptatibus veniam similique ex, eum libero illum debitis pariatur vel quasi, omnis non suscipit nostrum optio? Eum? Eum. Eum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet quaerat voluptates minima, tempore rerum adipisci, cupiditate ratione officiis illo sequi repellat eaque laudantium necessitatibus nulla ducimus quibusdam minus perferendis consequatur.</p>
+		<codeblk>
+int main() {
+	printf("Hello World!\n");
+	return 0;
+}
+		</codeblk>
+		<p>This is a paragraph. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium animi impedit voluptas eius voluptatibus veniam similique ex, eum libero illum debitis pariatur vel quasi, omnis non suscipit nostrum optio? Eum? Eum. Eum! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati reiciendis, aspernatur nihil, sint quis quod dolorum sequi maiores non amet dolor blanditiis deleniti atque rerum ipsam autem officia architecto voluptatum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum excepturi debitis tenetur facere. Ipsum assumenda debitis consequatur. Necessitatibus, ullam. Aut eligendi nostrum esse, blanditiis at tempore voluptate sapiente quibusdam qui. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste autem minima, quae voluptates deleniti voluptas ipsa porro explicabo ducimus reprehenderit repellat provident nostrum mollitia commodi incidunt, ad dolorem illum perspiciatis?</p>
+		<sec>...this is a section header...</sec>
+		<quoteblk>This is a quote block. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum odio et unde soluta laboriosam pariatur architecto voluptas, ipsum ab ea sint aspernatur veniam praesentium officia amet nesciunt sapiente debitis? Deleniti!</quoteblk>
+		<yemblk>CAUTION!</yemblk>
+		<remblk>WARNING!</remblk>
+		<mathblk>
+			$$this is a math block without a caption \frac{\sqrt{3}}{4}$$
+		</mathblk>
+		<mathblk>
+			$$this is a math block with a caption = \frac{\sqrt{x^2 + x}}{y + 1}$$
+			<eqn>This is the caption!</eqn>
+		</mathblk>
+		<mathblk>
+			$$this is a math block with a caption = \frac{\sqrt{x^2 + x}}{y + 1}$$
+			<eqn>This is the caption!</eqn>
+		</mathblk>
+		<sse>...and these are some images...</sse>
+		<imgblk>
+			<img src="test1.jpg" alt="this is an image block without a caption">
+		</imgblk>
+		<imgblk>
+			<img src="test2.jpg" alt="this is an image block with a caption">
+			<fig>this is the caption!</fig>
+		</imgblk>
+		<imgblk>
+			<img src="test1.jpg" alt="this is an image block with a caption">
+			<fig>this is another caption!</fig>
+		</imgblk>
+		<tblblk>
+			<table>
+				<thead>
+					<tr>
+						<th>Hello</th>
+						<th>World</th>
+						<th>Column</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>This</td>
+						<td>Is</td>
+						<td>Extra</td>
+					</tr>
+					<tr>
+						<td>A</td>
+						<td>Test</td>
+						<td>Another</td>
+					</tr>
+				</tbody>
+			</table>
+			<tbl>and this is a table caption!</tbl>
+		</tblblk>
+
+		<numlist>
+			<div>
+				<p>This is a block in a numbered list. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam autem commodi repudiandae? Ad, minima vel, quidem maiores eligendi provident doloribus modi ea ullam harum impedit, officia laudantium repudiandae expedita? Praesentium.</p>
+				<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat velit id facere nemo nisi quia enim! Quibusdam nemo impedit voluptatem, quod molestiae incidunt vel repellat voluptate sed illo in eaque?</p>
+			</div>
+			<div>
+				<p>This is a block in a numbered list.</p>
+				<letterlist>
+					<div>
+						<p>This is a block in a lettered list. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore accusantium repellat natus, numquam quidem et itaque amet, quaerat sapiente ullam est voluptas corporis voluptatibus facilis ad quam mollitia corrupti eaque?</p>
+					</div>
+					<div>
+						<p>This is a block in a lettered list.</p>
+					</div>
+					<div>
+						<p>This is a block in a lettered list.</p>
+					</div>
+				</letterlist>
+			</div>
+			<div>
+				<p>This is a block in a numbered list.</p>
+			</div>
+		</numlist>
+	</body>
+</html>

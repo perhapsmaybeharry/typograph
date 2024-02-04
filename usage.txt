@@ -1,0 +1,70 @@
+====================================================================================================
+
+
+TYPOGRAPH
+simple typesetting framework
+
+Harry Wang
+24-25 Aug 2023
+
+
+Typograph provides a simple typesetting framework for generating consistent design without the
+trouble of setting up a LaTeX document. It is not intended as a replacement for LaTeX, which
+is an extremely powerful tool, rather a lightweight, yet full-featured typesetting tool with a
+gentle learning curve.
+
+Typograph only has three dependencies: typograph.css, typograph.js, and a MathJax installation.
+Typograph can also be used with your own HTML/CSS/JS, if you wish to add more to your document
+that Typograph is unable to provide (it is quite lightweight after all).
+
+I hope you find it useful!
+
+
+====================================================================================================
+
+
+===== Available Tags =====
+
+----- Cover Page -----
+cover			cover page section
+	doctitle	document title
+	subtitle	document subtitle
+	author		document author
+	date		document date
+
+----- Table of Contents -----
+toc				indicates that a table of contents should be generated within
+
+----- Section Headers -----
+chp				formats the text within as a chapter header and tags it
+sec				formats the text within as a section header and tags it
+sse				formats the text within as a subsection header and tags it
+sss				formats the text within as a subsubsection header and tags it
+
+pbr				forces a page break in print mode
+
+----- Blocks -----
+mathblk			indicates this is a math block (contains MathJax $$)
+	eqn			formats the text within as an equation caption and tags it
+
+imgblk			indicates this is an image block (contains an <img>)
+	fig			formats the text within as a figure caption and tags it
+
+tblblk			indicates this is a table block (contains a <table>)
+	tbl			formats the text within as a table caption and tags it
+
+codeblk			indicates the content within is to be rendered in a code block
+quoteblk		indicates the content within is to be rendered in a quote block
+yemblk			indicates the content within is to be rendered in a yellow emphasis block
+remblk			indicates the content within is to be rendered in a red emphasis block
+
+----- Lists -----
+numlist			renders the individual elements within this block as a numbered list
+letterlist		renders the individual elements within this block as a lettered list
+
+listskip		attribute indicating an item is to be rendered full-width and unnumbered
+
+----- Emphasis -----
+m				renders the contained text at a medium font weight (500), if available
+n				renders the contained text at normal font weight (400)
+l				renders the contained text at a light font weight (300), if available

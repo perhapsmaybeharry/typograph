@@ -1,0 +1,441 @@
+/*
+
+	TYPOGRAPH
+	simple typesetting framework
+
+	Harry Wang
+	24 Aug 2023
+
+*/
+
+/* ===== MAIN DOCUMENT STYLING ===== */
+html {
+	/* scroll-behavior: smooth; */
+}
+
+body {
+	margin: 5em 7%;
+
+	font-size: 16px;
+	font-family: "Helvetica Neue", sans-serif;
+}
+
+@media print {
+	body {
+		margin: 0;
+
+		font-size: 15px;
+	}
+
+	@page {
+		margin: 1.5cm;
+	}
+}
+
+pbr {
+	display: block;
+	page-break-after: always;
+}
+
+/* ===== TAGGED AND UNTAGGED HEADER STYLING ===== */
+h1, chp {
+	margin-bottom: 0.75em;
+	
+	display: block;
+
+	font-size: 1.5em;
+	font-weight: 700;
+}
+
+h2, sec {
+	margin-bottom: 0.625em;
+
+	display: block;
+
+	font-size: 1.375em;
+	font-weight: 600;
+}
+
+h3, sse {
+	margin-bottom: 0.5em;
+
+	display: block;
+
+	font-size: 1.25em;
+	font-weight: 500;
+}
+
+h4, sss {
+	margin-bottom: 0.5em;
+
+	display: block;
+
+	font-size: 1.125em;
+	font-weight: 500;
+}
+
+/* ===== HEADER TAG STYLING ===== */
+/* chapter tag */
+chp {
+	page-break-before: always;
+}
+
+/* chapter, section, subsection tags */
+chp, sec, sse, sss {
+	margin-top: 1.25em;
+
+	display: grid;
+	grid-template-columns: 8% 92%;
+
+	break-after: avoid;
+}
+
+/* equation, figure tags */
+eqn, fig, tbl {
+	display: block;
+	margin-top: 0.2em;
+	
+	break-before: avoid;
+}
+
+/* tag stylings */
+chp > tagnum, sec > tagnum, sse > tagnum, sss > tagnum {
+	font-weight: 400;
+}
+
+eqn > tagnum, fig > tagnum, tbl > tagnum {
+	margin-right: 0.6em;
+	font-weight: 500;
+}
+
+/* ===== GENERAL BODY ELEMENT STYLING ===== */
+p {
+	margin: 1em 0;
+
+	display: block;
+
+	font-size: 1em;
+	font-weight: 400;
+	line-height: 1.4;
+}
+
+l {
+	font-weight: 300;
+	letter-spacing: 0.5px;
+}
+
+n {
+	font-weight: 400;
+}
+
+m {
+	font-weight: 500;
+}
+
+a {
+	color: hsl(225, 60%, 60%);
+	text-decoration: none;
+}
+
+code, pre {
+	font-weight: inherit;
+	font-size: 0.95em;
+	font-family: "SF Mono", "Menlo", monospace;
+}
+
+img {
+	width: 70%;
+	margin: 0 auto;
+	
+	display: block;
+}
+
+table {
+	max-width: 70%;
+	margin: 0 auto;
+	margin-bottom: 1em;
+
+	border-spacing: 0;
+}
+
+tr {
+	page-break-inside: avoid;
+}
+
+th, td {
+	padding: 0.25em 1em;
+}
+
+th {
+	border-bottom: 1px solid black;
+}
+
+li {
+	margin-bottom: 0.6em;
+	line-height: 1.4;
+}
+
+imgblk, mathblk, tblblk, codeblk, emblk, remblk {
+	width: 100%;
+	
+	display: block;
+	break-inside: avoid;
+
+	text-align: center;
+}
+
+imgblk {
+	margin: 2em 0;
+}
+
+mathblk, tblblk {
+	margin: 1em auto;
+}
+
+codeblk, quoteblk, yemblk, remblk {
+	width: auto;
+	padding: 1em 2em;
+	margin: 1em 0;
+	
+	display: block;
+	overflow-x: scroll;
+
+	text-align: left;
+	
+	background-color: rgb(240, 240, 245);
+	border-left: 2px solid darkgrey;
+	border-radius: 0 10px 10px 0;
+}
+
+codeblk {
+	font-family: "Menlo", monospace;
+	font-size: 0.85em;
+}
+
+codeblk :first-child {
+	margin-top: 0;
+}
+
+.typograph-codeblk-line {
+	min-height: 1em;
+	margin-top: 0.5em;
+}
+
+quoteblk :first-child, yemblk :first-child, remblk :first-child {
+	margin-top: 0;
+}
+
+quoteblk :last-child, yemblk :last-child, remblk :last-child {
+	margin-bottom: 0;
+}
+
+quoteblk {
+	background-color: rgb(235, 245, 255);
+	border-color: rgb(100, 130, 255);
+}
+
+yemblk {
+	background-color: rgb(255, 230, 150);
+	border-color: rgb(255, 200, 40);
+}
+
+remblk {
+	background-color: rgb(255, 180, 180);
+	border-color: rgb(255, 0, 0);
+}
+
+/* ===== COVER PAGE STYLING ===== */
+cover {
+	width: 100%;
+	padding-bottom: 1em;
+	margin-bottom: 1em;
+
+	display: grid;
+	grid-template-columns: 1fr auto auto;
+	grid-template-areas: 'title author author' 'title course date';
+	align-items: center;
+
+	border-bottom: 1px solid black;
+}
+
+cover > doctitle {
+	grid-area: title;
+
+	font-size: 3em;
+	font-weight: 500;
+}
+
+cover > subtitle, cover > author, cover > date {
+	font-size: 1.5em;
+	text-align: right;
+}
+
+cover > subtitle {
+	grid-area: course;
+	
+	font-weight: 300;
+}
+
+cover > author {
+	grid-area: author;
+}
+
+cover > date {
+	margin-left: 0.75em;
+	padding-left: 0.75em;
+
+	border-left: 1px solid black;
+	font-weight: 300;
+}
+
+@media print {
+	cover {
+		margin-top: 30vh;
+
+		grid-template-columns: 100%;
+		grid-template-areas: 'title' 'course' 'author' 'date';
+
+		text-align: center;
+		justify-content: center;
+		
+		border-bottom: none;
+		page-break-after: always;
+	}
+
+	cover > * {
+		margin: 0 auto;
+	}
+
+	cover > doctitle {
+		font-size: 3em;
+	}
+
+	cover > subtitle {
+		margin-top: 1em;
+		font-size: 2em;
+	}
+
+	cover > author {
+		margin-top: 2em;
+		font-size: 1.5em;
+	}
+
+	cover > date {
+		margin: 1em auto 0 auto;
+		padding-left: 0;
+
+		border: none;
+		font-size: 1.5em;
+	}
+}
+
+/* ===== TABLE OF CONTENTS STYLING ===== */
+toc {
+	margin: 3em 0;
+	padding: 1em 0 1em 3em;
+
+	display: block;
+
+	border-left: 0.5px solid grey;
+
+	font-size: 1.2em;
+	font-weight: 300;
+	page-break-after: always;
+}
+
+@media print {
+	toc {
+		margin: 0;
+		padding: 0;
+		border-left: none;
+	}
+}
+
+toc * {
+	display: block;
+}
+
+toc > h1 {
+	font-weight: 500;
+}
+
+toc-chp {
+	font-weight: 500;
+}
+
+toc-sec {
+	font-weight: 400;
+}
+
+toc-sse, toc-sss {
+	font-weight: 400;
+}
+
+toc-fig, toc-eqn, toc-tbl {
+	font-weight: 300;
+	letter-spacing: 0.5px;
+}
+
+toc a {
+	margin-bottom: 0.5em;
+
+	color: black;
+	text-decoration: none;
+}
+
+.typograph-indent1 {
+	margin-left: 2em;
+}
+
+.typograph-indent2 {
+	margin-left: 4em;
+}
+
+.typograph-indent3 {
+	margin-left: 6em;
+}
+
+.typograph-indent4 {
+	margin-left: 8em;
+}
+
+/* ===== LIST STYLING ===== */
+numlist, letterlist {
+	width: 100%;
+	display: grid;
+	grid-auto-flow: row;
+	grid-row-gap: 2em;
+}
+
+.typograph-list-row {
+	display: grid;
+	align-items: start;
+	grid-template-columns: 1.5em calc(100% - 1.5em);
+}
+
+.typograph-list-inner :first-child {
+	margin-top: 0;
+}
+
+.typograph-list-outer {
+	display: grid;
+	align-items: center;
+}
+
+.typograph-list-num {
+	margin: 0;
+	font-weight: 500;
+}
+
+/* ===== SYNTAX HIGHLIGHTING ===== */
+.typograph-cpp-function {
+
+}
+
+.typograph-cpp-keyword {
+
+}
+
+.typograph-cpp-type {
+
+}
