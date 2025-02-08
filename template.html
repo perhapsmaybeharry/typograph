@@ -11,9 +11,15 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1"/>
 
 		<!-- dependencies on typograph installation -->
-		<link rel="stylesheet" href="file:///Users/Harry/Desktop/%23%20work/%23%20typograph/typograph.css">
-		<script src="file:///Users/Harry/Desktop/%23%20work/%23%20typograph/typograph.js"></script>
-		<script id="MathJax-script" async src="file:///Users/Harry/Desktop/%23%20work/%23%20typograph/mathjax/es5/tex-mml-chtml.js"></script>
+		<link rel="stylesheet" href="typograph.css">
+		<script src="typograph.js"></script>
+		<script id="MathJax-script" async src="mathjax/es5/tex-mml-chtml.js"></script>
+
+		<!-- allows $...$ for inline math -->
+		<script>window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] } };</script>
+
+		<!-- custom document-specific styling -->
+		<style></style>
 	</head>
 	<body onload="renderDocument()">
 		<cover>
